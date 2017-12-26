@@ -1,5 +1,6 @@
 //app.js
 //kizi
+//lijun
 var qcloud = require('./vendor/wafer2-client-sdk/index')
 var config = require('./config')
 
