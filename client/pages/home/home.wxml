@@ -42,7 +42,7 @@
       <text>余额提现</text>
     </view>
 
-    <view class='bt-question'>
+    <view class='bt-question' catchtap='intoQuestion'>
       <image src='/images/icon/question.png'></image>
       <text>常见问题</text>
 

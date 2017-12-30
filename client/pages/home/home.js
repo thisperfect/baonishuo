@@ -10,5 +10,10 @@ Page({
     wx.navigateTo({
       url: '/pages/remaining/remaining',
     })
+  },
+  intoQuestion:function(event){
+    wx.navigateTo({
+      url: '/pages/question/question',
+    })
   }
 })

@@ -1,20 +1,20 @@
 <view class='remaining-container'>
-  <text class='text-contact'>联系客服</text>
+  <view class='text-contact'>联系客服</view>
   <view class='remaining-content'>
-    <view>
-      <text>账户余额</text>
-      <text>0.00元</text>
+    <view class='remaining-account'>
+      <text class='remaining-accout-title'>账户余额</text>
+      <text class='remaining-accout-sum'>0.00元</text>
     </view>
-    <text>提现金额</text>
-    <view>
+    <text class='remaining-title2'>提现金额</text>
+    <view class='remaining-input'>
       <text>￥</text>
-      <input></input>
+      <input type='number' value='00.00'></input>
     </view>
-    <view></view>
+   
     <text>提现到微信钱包，</text>
-    <text>全部提现</text>
-    <view>体现</view>
-    <text>1-5个工作日到账</text>
+    <text class='text-all'>全部提现</text>
+    <view class='remaining-submit'>提现</view>
+    <view class='remaining-message2'>1-5个工作日到账</view>
   </view>
-  <text>常见问题</text>
+  <view class='remaining-message3'>常见问题</view>
 </view>

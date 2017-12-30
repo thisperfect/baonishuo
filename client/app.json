@@ -1,11 +1,11 @@
 {
   "pages":[
    
-    
+  
     "pages/home/home",
     "pages/myrecords/myrecord",
     "pages/remaining/remaining",
-   
+    "pages/question/question",
     "pages/index/index",
     "pages/addCgi/addCgi"
   ],
