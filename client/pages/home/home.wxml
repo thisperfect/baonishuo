@@ -1,0 +1,55 @@
+<view class='home-container'>
+
+  <view class='home-content'>
+    <image class='home-user-icon' src='/images/icon/icon1.jpg'></image>
+    <view class='commands' >
+      <text>设置口令</text>
+      <input class='input-command' maxlength="10" placeholder="最大输入长度10" placeholder-style="color:#d8d8d8" />
+    </view>
+    <view class='messages'>
+      <text class='text-message'>小伙伴们说口令就能获得随机的打赏</text>
+      <image class='text-message-img' src='/images/icon/question.png'></image>
+    </view>
+
+    <view class='moneys'>
+      <text >赏金(元)</text>
+      <input class='input-money' type='number' placeholder="填写金额" placeholder-style="color:#d8d8d8"></input>
+    </view>
+
+    <view class='nums'>
+      <text>数量(个)</text>
+      <input class='input-num' type='number' placeholder="填写数量" placeholder-style="color:#d8d8d8"></input>
+    </view>
+    <text class='text-message2'>需支付￥0.00服务费，优先使用余额￥0.00</text>
+
+    <view class='home-submit'>
+      生成语音口令
+    </view>
+  </view>
+
+
+  <text class='text-message3'>联系客服</text>
+
+
+  <view class='home-bts'>
+    <view class='bt-records' catchtap='intoMyRecord'>
+      <image src='/images/icon/myrecords.png'></image>
+      <text>我的记录</text>
+    </view>
+
+    <view class='bt-money' catchtap='intoRemaining'>
+      <image src='/images/icon/money.png'></image>
+      <text>余额提现</text>
+    </view>
+
+    <view class='bt-question'>
+      <image src='/images/icon/question.png'></image>
+      <text>常见问题</text>
+
+    </view>
+
+
+  </view>
+
+
+</view>

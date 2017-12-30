@@ -1,0 +1,25 @@
+.message-container{
+  background-color: #fff;
+  font-size: 30rpx;
+  padding: 17rpx 23rpx 17rpx 23rpx;
+  margin-bottom: 1px;
+}
+.message-money{
+  margin-bottom: 8rpx;
+  color: #414141;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+}
+.message-money-sum{
+  font-weight: 600;
+}
+
+.message-date{
+  color: #8e8e8e;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+}
+
+

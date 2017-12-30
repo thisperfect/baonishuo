@@ -1,0 +1,13 @@
+<template name="message">
+
+  <view class='message-container'>
+    <view class='message-money'>
+      <text class='message-title'>圣诞快乐</text>
+      <text class='message-money-sum'>24.00元</text>
+    </view>
+    <view class='message-date'>
+      <text class='message-time'>12月24日 15:08</text>
+      <text class='message-date-sum'>3/24</text>
+    </view>
+  </view>
+</template>

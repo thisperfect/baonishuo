@@ -1,0 +1,13 @@
+.text-contact{
+  float: right;
+  padding: 18rpx 23rpx 0 0;
+  color: #697b9f;
+}
+
+.remaining-content{
+  width: 88%;
+  margin: 100rpx auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
