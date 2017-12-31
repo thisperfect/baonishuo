@@ -29,4 +29,12 @@ if (!function_exists('debug')) {
 
         log_message('debug', implode(' ', $messages) . "\n");
     }
+    function getRules($fields)
+    {
+        $rules = array();
+        foreach ($fields as $field) {
+            $rules[] = array('field'=>$field,'rules'=>'required');
+        }
+        return $rules;
+    }
 }
