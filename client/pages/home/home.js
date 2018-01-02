@@ -15,5 +15,10 @@ Page({
     wx.navigateTo({
       url: '/pages/question/question',
     })
+  },
+  submit_voice:function(event){
+    wx.navigateTo({
+      url: '/pages/redpacket/redpacket',
+    })
   }
 })

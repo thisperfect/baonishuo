@@ -1,3 +1,4 @@
+<import src="comment-template/comment-template.wxml" />
 <view class='redpacket-container'>
   <view class='redpacket-content'>
     <image class='redicon' src='/images/icon/icon1.jpg'></image>
@@ -27,6 +28,23 @@
     </view>
 
     <view class='red-below-container-list'>
+      
+      
+      <view class='red-comment-item'>
+        <image class='comment-item-img' src='/images/icon/icon1.jpg'></image>
+        <view class='comment-item-right-block'>
+          <text class='comment-item-name'>我会发光</text>
+          <view class='comment-item-below'>
+            <view class='comment-item-voice'>1''</view>
+            <view class='comment-item-message'> 
+              <text class='comment-item-price'> 1.00元</text>
+              <text class='comment-item-date'>12月24日 17：02</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
       <view class='red-below-container-line'>
         <view class='line'></view>
         <view class='line'></view>

@@ -22,7 +22,7 @@
     </view>
     <text class='text-message2'>需支付￥0.00服务费，优先使用余额￥0.00</text>
 
-    <view class='home-submit'>
+    <view class='home-submit' catchtap='submit_voice'>
       生成语音口令
     </view>
   </view>

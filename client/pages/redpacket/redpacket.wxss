@@ -1,3 +1,7 @@
+@import "comment-template/comment-template.wxss";
+page{
+  background-color: #fafeff;
+}
 .redpacket-container {
   display: flex;
   flex-direction: column;
@@ -77,6 +81,9 @@
 }
 
 .red-below-container-list {
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .red-below-container-line {
@@ -93,4 +100,76 @@
   margin: 10rpx;
   height: 1rpx;
   width: 40%;
+}
+
+.red-comment-item{
+  background-color: #fff;
+  width: 92%;
+  border: 3rpx solid #f1f1f1;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 20rpx;
+}
+
+.comment-item-img{
+  width: 130rpx;
+  height: 130rpx;
+  
+  
+}
+
+.comment-item-right-block{
+  justify-content: space-between;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  height: 130rpx;
+
+}
+
+.comment-item-name{
+  margin-bottom: 30rpx;
+  line-height: 30rpx;
+}
+
+.comment-item-below{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  
+}
+
+.comment-item-voice{
+  background-color: #f2f2f2;
+  border: 1rpx solid #dddddd;
+  padding: 10rpx;
+  border-radius: 18rpx;
+  min-width: 120rpx;
+  color: #999999;
+  font-size: 27rpx;
+  height: 40rpx;
+  text-align:  center;
+  line-height: 40rpx;
+}
+
+.comment-item-message{
+  display: flex;
+  flex-direction: column;
+  text-align: right
+}
+
+.comment-item-price{
+  font-weight: 600;
+  font-size: 30rpx;
+}
+
+.comment-item-date{
+  font-size: 24rpx;
+  color: #aaaaaa;
 }

@@ -1,11 +1,12 @@
 {
   "pages":[
    
-    "pages/redpacket/redpacket",
+    
     "pages/home/home",
     "pages/myrecords/myrecord",
     "pages/remaining/remaining",
     "pages/question/question",
+    "pages/redpacket/redpacket",
     "pages/index/index",
     "pages/addCgi/addCgi"
   ],
