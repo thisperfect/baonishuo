@@ -1,0 +1,37 @@
+<view class='redpacket-container'>
+  <view class='redpacket-content'>
+    <image class='redicon' src='/images/icon/icon1.jpg'></image>
+    <text class='red-name'>罗少东</text>
+    <text class='red-title'>圣诞</text>
+    <button class='bt-submit'>按住说出以上口令领取赏金</button>
+    <view class='red-action-container'>
+      <view class='red-action-enchashment'>
+        <image src='/images/icon/dollars.png'></image>
+        <text>去提现</text>
+      </view>
+      <view class='red-action-enchashment'>
+        <image src='/images/icon/redpacket.png'></image>
+        <text>再发一个</text>
+      </view>
+
+      <view class='red-action-enchashment'>
+        <image src='/images/icon/share.png'></image>
+        <text>去转发</text>
+      </view>
+    </view>
+  </view>
+  <view class='red-below-container'>
+    <view class='red-below-container-title'>
+      <text>共2.00元，已领取0/2个</text>
+      <text>投诉</text>
+    </view>
+
+    <view class='red-below-container-list'>
+      <view class='red-below-container-line'>
+        <view class='line'></view>
+        <view class='line'></view>
+      </view>
+    </view>
+    <text>未领取的金额，将于24小时后退至余额</text>
+  </view>
+</view>
