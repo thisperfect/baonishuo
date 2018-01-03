@@ -40,7 +40,46 @@ var question_database=[
      }
 
 ]
+var comment_database=[
+  {
+    name:'我会放光啊',
+    time:"8''",
+    price:'1.00元',
+    date:'12月24日 17：02'
+
+  },
+  {
+    name: 'kizi',
+    time: "7''",
+    price: '2.00元',
+    date: '12月24日 17：02'
+
+  },
+  {
+    name: 'lijun',
+    time: "6''",
+    price: '6.00元',
+    date: '12月24日 17：02'
+
+  },
+  {
+    name: 'whj',
+    time: "8''",
+    price: '5.00元',
+    date: '12月24日 17：02'
+
+  },
+  {
+    name: 'cml',
+    time: "8''",
+    price: '4.00元',
+    date: '12月24日 17：02'
+
+  }
+
+]
 
 module.exports = {
-  questionList: question_database
+  questionList: question_database,
+  commentList: comment_database
 }

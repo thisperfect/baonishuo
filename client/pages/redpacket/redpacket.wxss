@@ -32,6 +32,7 @@ page{
   margin-bottom: 50rpx;
 }
 
+
 .bt-submit {
   background-color: #4cb050;
   color: white;
@@ -111,6 +112,7 @@ page{
   flex-direction: row;
   margin: 0 auto;
   padding: 20rpx;
+  margin-bottom: 15rpx;
 }
 
 .comment-item-img{
