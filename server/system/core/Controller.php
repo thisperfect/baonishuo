@@ -100,5 +100,13 @@ class CI_Controller {
 						json_encode($data)
 					);
 	}
-
+	public function validate($fields)
+    {
+        $this->load->helper('form');
+	    $this->load->library('form_validation');
+        $this->load->helper('general');
+        $rules = getRules($fields);
+	    $this->form_validation->set_rules($rules);
+		return $this->form_validation->run();
+    }
 }
