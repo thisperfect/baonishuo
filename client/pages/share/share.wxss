@@ -10,6 +10,7 @@
   width: 150rpx;
   height: 150rpx;
   margin: 20rpx auto;
+  border-radius: 75rpx;
 }
 .share-message-container{
   display: flex;

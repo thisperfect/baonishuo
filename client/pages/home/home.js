@@ -6,7 +6,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    formdefault:''
   },
   onLoad:function(options){
     this.login();
@@ -78,18 +79,17 @@ Page({
    * 提交语音口令
    */
   formSubmit:function(e){
+    var that =this;
     console.log(e.detail);
+    for(var key in e.detail.value){
+      if (!e.detail.value[key]){
+          //有数据为空
+          util.showModel("失败","请补充完信息");
+          return ;
+      }
+    }
     e.detail.value["open_id"] = this.data.userInfo.openId;
     e.detail.value["commission"] = parseFloat(e.detail.value.reward)*0.02;
-    //e.detail.value["skey"] ="4d518b1e52d2fa01398b26e7db905d83374880f9";
-    // var data={
-
-    // };
-    // for(var key in e.detail.value){
-    //   data[key]=e.detail.value[key];
-    // }
-    // data[open_id] = this.data.userInfo.openId;
-    // data[]
     console.log(e.detail.value);
     wx.request({
       url: config.service.createVoiceComment,
@@ -99,11 +99,29 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success:function(res){
-        console.log(res.data);
+        console.log(res);
+        var id = res.data.data.packet_id;
+        util.showSuccess("生成红包成功");
+        //将表单重置
+        that.setData({
+          formdefault:''
+        });
+        //进去到红包分享页面
+        wx.navigateTo({
+          url: '/pages/redpacket/redpacket?id=' +id ,
+        })
+      },
+      fail:function(e){
+        util.showModel("失败");
       }
       
     })
   },
+
+  
+  // formReset: function () {
+  //   console.log('form发生了reset事件')
+  // },
 
   intoMyRecord:function(event){
     wx.navigateTo({

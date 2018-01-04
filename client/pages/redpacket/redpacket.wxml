@@ -1,10 +1,11 @@
 <import src="comment-template/comment-template.wxml" />
 <view class='redpacket-container'>
   <view class='redpacket-content'>
-    <image class='redicon' src='/images/icon/icon1.jpg'></image>
-    <text class='red-name'>罗少东</text>
-    <text class='red-title'>圣诞</text>
-    <button class='bt-submit'>按住说出以上口令领取赏金</button>
+    <image class='redicon' src="{{ detail_info.packet.user_info.avatarUrl }}"></image>
+    <text class='red-name'>{{detail_info.packet.user_info.nickName}}</text>
+    <text class='red-title'>{{ detail_info.packet.command }}</text>
+    <text wx:if="{{ detail_info.receives.length>0 }}" class='red-sum'>1.00元</text>
+    <button wx:else class='bt-submit'>按住说出以上口令领取赏金</button>
     <view class='red-action-container'>
       <view class='red-action-enchashment'>
         <image src='/images/icon/dollars.png'></image>
@@ -44,16 +45,16 @@
         </view>
       </view> -->
 
-      <block wx:for="{{commentList}}" wx:for-item="item" wx:for-index="idx">
+      <block wx:for="{{detail_info.receives}}" wx:for-item="item" wx:for-index="idx">
         <view class='red-comment-item'>
-          <image class='comment-item-img' src='/images/icon/icon1.jpg'></image>
+          <image class='comment-item-img' src='{{ item.user_info.avatarUrl }}'></image>
           <view class='comment-item-right-block'>
-            <text class='comment-item-name'>{{item.name}}</text>
+            <text class='comment-item-name'>{{item.user_info.nickName}}</text>
             <view class='comment-item-below'>
-              <view class='comment-item-voice'>{{item.time}}</view>
+              <view class='comment-item-voice'>{{item.voice}}</view>
               <view class='comment-item-message'>
-                <text class='comment-item-price'> {{item.price}}</text>
-                <text class='comment-item-date'>{{item.date}}</text>
+                <text class='comment-item-price'> {{item.reward}}元</text>
+                <text class='comment-item-date'>{{item.create_time}}</text>
               </view>
             </view>
           </view>

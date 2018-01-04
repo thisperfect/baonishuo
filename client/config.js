@@ -25,6 +25,9 @@ var config = {
 
         //生成语音口令
         createVoiceComment: `${host}/packet/create`,
+
+        //获取语音口令详情
+        getVoiceDetail: `${host}/packet/view`,
     }
 };
 

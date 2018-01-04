@@ -4,7 +4,7 @@
     <image class='home-user-icon' src="{{userInfo.avatarUrl}}"></image>
     <view class='commands' >
       <text>设置口令</text>
-      <input name="command" class='input-command' maxlength="10" placeholder="最大输入长度10" placeholder-style="color:#d8d8d8" />
+      <input name="command" class='input-command' maxlength="10" placeholder="最大输入长度10" placeholder-style="color:#d8d8d8" value='{{formdefault}}' />
     </view>
     <view class='messages'>
       <text class='text-message'>小伙伴们说口令就能获得随机的打赏</text>
@@ -13,12 +13,12 @@
 
     <view class='moneys'>
       <text >赏金(元)</text>
-      <input name="reward" class='input-money' type='number' placeholder="填写金额" placeholder-style="color:#d8d8d8"></input>
+      <input name="reward" class='input-money' type='number' placeholder="填写金额" placeholder-style="color:#d8d8d8" value='{{formdefault}}' ></input>
     </view>
 
     <view class='nums'>
       <text>数量(个)</text>
-      <input name="qty" class='input-num' type='number' placeholder="填写数量" placeholder-style="color:#d8d8d8"></input>
+      <input name="qty" class='input-num' type='number' placeholder="填写数量" placeholder-style="color:#d8d8d8" value='{{formdefault}}' ></input>
     </view>
     <text class='text-message2'>需支付￥0.00服务费，优先使用余额￥0.00</text>
 
