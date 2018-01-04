@@ -54,3 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['weapp'] = '/';
 $route['weapp/(.+)'] = '$1';
+
+$route['packet/(.+)'] = 'packet/$1';
