@@ -50,8 +50,12 @@ Page({
 
 
   ToShare: function (event) {
+    var avatar = this.data.detail_info.packet.user_info.avatarUrl;
+    //var name = this.detail_info.packet.user_info.nickName;
+    var command = this.data.detail_info.packet.command;
+    var id = this.data.detail_info.packet.packet_id;
     wx.navigateTo({
-      url: '/pages/share/share',
+      url: '/pages/share/share?avatar=' + avatar + '&command=' + command + '&id=' + id,
     })
-  }
+  },
 })

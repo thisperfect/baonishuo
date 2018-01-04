@@ -1,13 +1,13 @@
 <view class='share-container'>
-  <image class='share-icon' src='/images/icon/icon1.jpg'></image>
+  <image class='share-icon' src="{{ avatar }}"></image>
   <view class='share-message-container'>
     <text>发一个语音口令</text>
     <image class='share-message-img' src='/images/icon/redpacket2.png'></image>
   </view> 
-  <text class='share-title'>圣诞快乐</text>
+  <text class='share-title'>{{ command }}</text>
 
   <view class='share-below'>
-    <button class='share-bt1'>转发到好友或群聊</button>
+    <button class='share-bt1' open-type="share">转发到好友或群聊</button>
     <button class='share-bt2'>生成朋友圈分享图</button>
     <view>
        <image class='back' src='/images/icon/back.png'></image> 

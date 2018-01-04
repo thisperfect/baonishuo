@@ -3,33 +3,41 @@ var util = require('../../utils/util.js');
 Page({
   data:{
     userInfo: {},
+    packet_info: {},
   },
   onLoad:function(options){
-    //目前将opeid_id设置为14作为测试专用id   
-    console.log("redpacket_id =" + options.id);
+    //拿到红包的id 发红的头像 和口令
+    var id = options.id;
+    var command = options.command;
+    var avatar = options.avatar;
+    console.log("id=" + id + "  command=" + command + " avatar=" + avatar);
+    this.setData({
+      command: command,
+      avatar: avatar
+    })
+
     //添加用户信息
     this.setData({
       userInfo: wx.getStorageSync("userinfo")
     });
-    var data={};
-    data.packet_id="14";
-    data.open_id=this.data.userInfo.openId;
-    console.log(data);
-    wx.request({
-      url: config.service.getVoiceDetail,
-      data: data,
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      console.log(res.target);
+    }
+    return {
+      title: '这是转发红包,有本事别打开',
+      path: '/pages/redpacket/redpacket',
+      success: function (res) {
+        console.log("转发成功");
+        for (var key in res.shareTickets) {
+          console.log("key =" + key + "  value =" + res.shareTickets[key])
+        }
+        util.showSuccess("转发成功");
       },
-      success:function(res){
-        console.log(res)
-      },
-      fail:function(){
-        console.log("share fail")
+      fail: function (res) {
+        console.log("转发失败")
       }
-    });
-
-
+    }
   }
 })
