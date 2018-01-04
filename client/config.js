@@ -3,7 +3,9 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://t9jhvvuo.qcloud.la';
+//https://441649268.rundong.xyz
+//https://t9jhvvuo.qcloud.la
+var host = 'https://441649268.rundong.xyz';
 
 var config = {
 
