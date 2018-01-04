@@ -51,6 +51,7 @@ var getWxLoginResult = function getLoginCode(callback) {
     });
 };
 
+
 var noop = function noop() {};
 var defaultOptions = {
     method: 'GET',

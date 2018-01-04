@@ -9,6 +9,7 @@ exports.extend = function extend(target) {
         var source = sources[i];
         for (var key in source) {
             if (source.hasOwnProperty(key)) {
+             
                 target[key] = source[key];
             }
         }

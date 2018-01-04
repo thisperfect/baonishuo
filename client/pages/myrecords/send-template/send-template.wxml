@@ -4,7 +4,7 @@
   <scroll-view scroll-y style='height:{{scrollH}}px'>
     <view class='send-container'>
       <view>
-        <image class='user-icon' src='/images/icon/icon1.jpg'></image>
+        <image class='user-icon' src="{{userIcon}}"></image>
         <view class='user-info'>
           <text class='user-name'>罗少东</text>
           <text>共发出</text>

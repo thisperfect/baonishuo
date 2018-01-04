@@ -8,6 +8,7 @@
   width: 160rpx;
   height: 160rpx;
   margin-bottom: 20rpx;
+  border-radius: 80rpx;
 }
 
 .user-info{

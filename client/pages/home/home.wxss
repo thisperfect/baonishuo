@@ -5,7 +5,6 @@
 .home-container {
   padding-top: 30px;
   text-align: center;
- 
 }
 
 .home-content {
@@ -21,6 +20,7 @@
   width: 100rpx;
   height: 100rpx;
   margin-bottom: 20px;
+  border-radius: 50rpx;
 }
 
 .commands {
@@ -91,31 +91,42 @@
   border-bottom: 1px solid #d8d8d8;
 }
 
-.text-message2{
-  color: #888888;
+.text-message2 {
+  color: #888;
 }
 
-.home-submit{
+/* .home-submit {
   margin: 20rpx auto;
   width: 80%;
   height: 30px;
-  border-radius:  20px;
+  border-radius: 20px;
   text-align: center;
   line-height: 30px;
   padding: 5px;
   background-color: #db5943;
   color: white;
   font-size: 30rpx;
+} */
 
+.bt-submit {
+  border-radius: 15px;
+  margin: 20rpx auto;
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #db5943;
+  color: white;
+  font-size: 30rpx;
 }
 
-.text-message3{
+.text-message3 {
   font-size: 12px;
   line-height: 40px;
   color: #70788d;
 }
 
-.home-bts{
+.home-bts {
   display: flex;
   flex-direction: row;
   height: 100rpx;
@@ -126,44 +137,37 @@
   right: 0;
   bottom: 0;
   justify-content: space-around;
-  
 }
 
-.bt-records{
+.bt-records {
   display: flex;
   flex-direction: column;
-  
 }
-.bt-records image{
+
+.bt-records image {
   width: 70rpx;
   height: 70rpx;
   margin: 0 auto;
 }
 
-
-.bt-money{
-   display: flex;
+.bt-money {
+  display: flex;
   flex-direction: column;
-  
 }
 
-.bt-money image{
-  width: 70rpx;
-  height: 70rpx;
-    margin: 0 auto;
-
-}
-
-
-.bt-question{
-   display: flex;
-  flex-direction: column;
-  
-}
-
-.bt-question image{
+.bt-money image {
   width: 70rpx;
   height: 70rpx;
   margin: 0 auto;
+}
 
+.bt-question {
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-question image {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
 }

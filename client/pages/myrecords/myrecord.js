@@ -1,6 +1,7 @@
 Page({
   data:{
     currentTab:0,
+    userIcon:'',
   },
   onLoad: function (options) {
     console.log("Windowheight:=" + wx.getSystemInfoSync().windowHeight);
@@ -8,7 +9,16 @@ Page({
     var swiperH = wx.getSystemInfoSync().windowHeight - 43;
     this.setData({
       swiperHeight: swiperH
+    });
+
+    /**
+     * 从缓存中获取用户信息
+     */
+    console.log("icon =" + wx.getStorageSync("userinfo").avatarUrl);
+    this.setData({
+      userIcon: wx.getStorageSync("userinfo").avatarUrl
     })
+
   },
   bindChange:function(event){
     console.log("currentTAB =" + event.detail.current);
