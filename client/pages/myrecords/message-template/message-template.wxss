@@ -3,6 +3,17 @@
   font-size: 30rpx;
   padding: 17rpx 23rpx 17rpx 23rpx;
   margin-bottom: 1px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.message-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.message-right-container{
+  width: 100%;
+  
 }
 .message-money{
   margin-bottom: 8rpx;

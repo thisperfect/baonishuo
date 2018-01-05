@@ -23,7 +23,7 @@
       <view class='send-list'>
       <block wx:for="{{isSend? send:receive}}" wx:for-item="item" wx:for-index="idx">
           <view>
-            <template is="message" data="{{isSend:isSend,...item}}"/>
+            <template is="message" data="{{isSend,...item}}"/>
           </view>
       </block>
         <!-- <template is="message" />
