@@ -1,13 +1,19 @@
 <template name="message">
 
   <view class='message-container'>
-    <view class='message-money'>
-      <text class='message-title'>{{ command }}</text>
-      <text class='message-money-sum'>{{reward}}元</text>
-    </view>
-    <view class='message-date'>
-      <text class='message-time'>{{ create_time }}</text>
-      <text class='message-date-sum'>{{left_qty}}/{{qty}}</text>
+    <image wx:if="{{ !isSend }}" class='message-img' src='/images/icon/icon1.jpg' />
+
+    <view class='message-right-container'>
+      <view class='message-money'>
+        <text class='message-title'>{{isSend? command :user_info.nickName}}</text>
+        <text class='message-money-sum'>{{reward}}元</text>
+      </view>
+      <view class='message-date'>
+        <text class='message-time'>{{ create_time }}</text>
+        <text wx:if="{{ isSend }}" class='message-date-sum'>{{left_qty}}/{{qty}}</text>
+      </view>
     </view>
   </view>
+
+
 </template>
