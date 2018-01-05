@@ -73,6 +73,12 @@ Page({
     this.setData({
       currentTab: pos
     });
+  },
+  intoRedPacket:function(event){
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/redpacket/redpacket?id='+id,
+    });
   }
 
 })

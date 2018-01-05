@@ -4,10 +4,12 @@ Page({
   data:{
     userInfo: {},
     packet_info: {},
+    id:'',
   },
   onLoad:function(options){
     //拿到红包的id 发红的头像 和口令
     var id = options.id;
+    this.data.id=id;
     var command = options.command;
     var avatar = options.avatar;
     console.log("id=" + id + "  command=" + command + " avatar=" + avatar);
@@ -27,7 +29,7 @@ Page({
     }
     return {
       title: '这是转发红包,有本事别打开',
-      path: '/pages/redpacket/redpacket',
+      path: '/pages/redpacket/redpacket?id=' + this.data.id,
       success: function (res) {
         console.log("转发成功");
         for (var key in res.shareTickets) {

@@ -30,7 +30,7 @@
   </view>
   </form>
 
-  <text class='text-message3'>联系客服</text>
+  <text class='text-message3' catchtap='clearStorage'>联系客服</text>
 
 
   <view class='home-bts'>

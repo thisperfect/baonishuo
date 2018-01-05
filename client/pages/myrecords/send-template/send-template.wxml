@@ -22,7 +22,7 @@
       </view>
       <view class='send-list'>
       <block wx:for="{{isSend? send:receive}}" wx:for-item="item" wx:for-index="idx">
-          <view>
+          <view catchtap="{{ isSend? 'intoRedPacket':'' }}" data-id="{{ item.packet_id }}">
             <template is="message" data="{{isSend,...item}}"/>
           </view>
       </block>

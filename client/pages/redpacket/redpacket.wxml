@@ -11,7 +11,7 @@
         <image src='/images/icon/dollars.png'></image>
         <text>去提现</text>
       </view>
-      <view class='red-action-enchashment'>
+      <view class='red-action-enchashment' catchtap='distributeRedPacket'>
         <image src='/images/icon/redpacket.png'></image>
         <text>再发一个</text>
       </view>

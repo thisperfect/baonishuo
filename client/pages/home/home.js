@@ -111,6 +111,7 @@ Page({
     * 将用户信息保存到缓存里面
     */
     wx.setStorageSync("userinfo", this.data.userInfo);
+    app.globalData.logged=true;
   },
 
   /**
@@ -160,6 +161,14 @@ Page({
   // formReset: function () {
   //   console.log('form发生了reset事件')
   // },
+
+  /**
+   * 清除缓存
+   */
+  clearStorage:function(event){
+    wx.clearStorage();
+    app.globalData.logged=false;
+  },
 
   intoMyRecord:function(event){
     wx.navigateTo({
