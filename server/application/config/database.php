@@ -78,6 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'wx1e236e8724058d61',
+	// 'password' => 'KChygS7t',//production
 	'database' => 'cAuth',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
