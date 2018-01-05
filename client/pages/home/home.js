@@ -1,6 +1,7 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index');
 var config = require('../../config');
 var util = require('../../utils/util.js');
+var app = getApp();
 Page({
   data:{
     userInfo: {},
@@ -10,7 +11,16 @@ Page({
     formdefault:''
   },
   onLoad:function(options){
-    this.login();
+    /**
+     * 通过全局来判断是否登录，避免每次进入时重复登录
+     */
+    if (app.globalData.logged){
+      this.setData({
+        userInfo:wx.getStorageSync("userinfo")
+      })
+    }else{
+      this.login();
+    }
    
   },
 
@@ -51,12 +61,12 @@ Page({
             }
           })
           //
+
           // that.setData({
           //   userInfo: result,
           //   logged: true
           // });
-
-          that.log();
+          //that.log();
         } else {
           // 如果不是首次登录，不会返回用户信息，请求用户信息接口获取
           qcloud.request({
@@ -89,6 +99,7 @@ Page({
       }
     })
   },
+
   /**
    * 用来打印用户信息,并保存用户信息
    */
@@ -101,6 +112,7 @@ Page({
     */
     wx.setStorageSync("userinfo", this.data.userInfo);
   },
+
   /**
    * 提交语音口令
    */
