@@ -26,11 +26,35 @@ Page({
       success(result) {
         if (result) {
           util.showSuccess('登录成功')
+          console.log("first to login");
+          console.log(result);
           console.log("userinfo =" + result);
-          that.setData({
-            userInfo: result,
-            logged: true
-          });
+          //
+          qcloud.request({
+            url: config.service.requestUrl,
+            login: true,
+            success(result) {
+              util.showSuccess('登录成功');
+              //console.log("not first to login");
+              console.log(result.data.data);
+              that.setData({
+                userInfo: result.data.data,
+                logged: true
+              });
+
+              that.log();
+            },
+
+            fail(error) {
+              util.showModel('请求失败', error)
+              console.log('request fail', error)
+            }
+          })
+          //
+          // that.setData({
+          //   userInfo: result,
+          //   logged: true
+          // });
 
           that.log();
         } else {
@@ -39,7 +63,9 @@ Page({
             url: config.service.requestUrl,
             login: true,
             success(result) {
-              util.showSuccess('登录成功')
+              util.showSuccess('登录成功');
+              console.log("not first to login");
+              console.log(result.data.data);
               that.setData({
                 userInfo: result.data.data,
                 logged: true

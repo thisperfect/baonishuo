@@ -24,6 +24,8 @@ Page({
       success(result) {
         if (result) {
           util.showSuccess('登录成功')
+          console.log("first to login");
+          console.log(result);
           console.log("userinfo =" + result);
           that.setData({
             userInfo: result,
@@ -35,7 +37,9 @@ Page({
             url: config.service.requestUrl,
             login: true,
             success(result) {
-              util.showSuccess('登录成功')
+              util.showSuccess('登录成功');
+              console.log("not first to login");
+              console.log(result.data.data);
               that.setData({
                 userInfo: result.data.data,
                 logged: true
