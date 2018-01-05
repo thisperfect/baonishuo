@@ -12,18 +12,18 @@
         <view class='info'>
           <view class='info-money'>
             <text class='info-money-title'>金额(元)</text>
-            <text class='info-money-num'>{{ send_reward.send_reward }}</text>
+            <text class='info-money-num'>{{isSend? send_reward.send_reward : receive_reward.receive_reward}}</text>
           </view>
           <view class='info-num'>
             <text class='info-num-title'>数量(个)</text>
-            <text class='info-num-num'>{{ send_number }}</text>
+            <text class='info-num-num'>{{isSend? send_number :receive_number}}</text>
           </view>
         </view>
       </view>
       <view class='send-list'>
-      <block wx:for="{{TypeList}}" wx:for-item="item" wx:for-index="idx">
+      <block wx:for="{{isSend? send:receive}}" wx:for-item="item" wx:for-index="idx">
           <view>
-            <template is="message" data="{{...item}}"/>
+            <template is="message" data="{{isSend:isSend,...item}}"/>
           </view>
       </block>
         <!-- <template is="message" />
