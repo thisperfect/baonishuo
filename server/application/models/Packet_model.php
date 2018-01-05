@@ -5,6 +5,9 @@ class Packet_model extends CI_Model {
     {
         $this->load->database();
     }
+    /**
+     * 获取红包
+     */
     public function get_packet($condition = array(),$type='row')
     {
         if (empty($condition))
@@ -21,6 +24,9 @@ class Packet_model extends CI_Model {
             return $query->result_array();
         }
     }
+    /**
+     * 生成红包
+     */
     public function set_packet($result =array())
     {
         $open_id = $this->input->post('open_id');
@@ -64,6 +70,63 @@ class Packet_model extends CI_Model {
             );
         }
     }
+    /**
+     * 红包详情
+     */
+    public function view_packet()
+    {
+        $packet_id = $this->input->post('packet_id');
+        $condition = array('packet_id'=>$packet_id);
+        $packet = $this->get_packet($condition);
+        if(!$packet){
+            return array(
+                'code' => -1,
+                'data' => array('message'=>'Packet not found')
+            );
+        }else{
+            $packet['user_info'] = json_decode($packet['user_info'],true);
+        }
+
+        $open_id = $this->input->post('open_id');
+        $this->load->model('user_model');
+        $user = $this->user_model->get_user($open_id);
+        // echo "<pre>";var_dump($user);exit;
+        if(!$user){
+            return array(
+                'code' => -1,
+                'data' => array('message'=>'Customer not found')
+            );
+        }
+
+        // echo "<pre>";print_r($userinfo);exit 
+        $condition = array('packet_id'=>$packet_id,'open_id'=>$open_id);
+        $this->load->model('receive_model');
+        $receive = $this->receive_model->get_receive($condition);
+        // echo "<pre>";print_r($receive);exit;
+        $has_received = $receive ? true : false;
+        $received_reward = $receive ? $receive['reward'] : '';
+        $condition = array('packet_id'=>$packet_id);
+        $receives = $this->receive_model->get_receive($condition,'result');
+        if($receives && count($receives)){
+            foreach ($receives as &$receive){
+                $receive['user_info'] = json_decode($receive['user_info'],true);
+                $receive['sender_info'] = json_decode($receive['sender_info'],true);
+            }
+        }
+        $condition = array();
+        return array(
+            'code' => 0,
+            'data' =>array(
+                'has_received'=>$has_received,
+                'received_reward'=>$received_reward,
+                'packet'=>$packet,
+                'receives'=>$receives,
+            ),
+        );
+    }
+    /**
+     * 领取红包
+     */
     public function create_receive($packet=array(),$userinfo='')
     {
         // echo "<pre>";print_r($_POST);exit;
@@ -99,13 +162,22 @@ class Packet_model extends CI_Model {
                 'data' => array('message'=>'You have received before'),
             );
         }
-
+        $this->load->model('upload_model');
+        //upload voice
+        $file = $this->upload_model->upload_file();
+        if($file['code']==-1){
+            return array(
+                'code'=>-1,
+                'data'=>array('message'=>$file['error']),
+            );
+        }
+        $voice = $file['data']['imgUrl'];
         $rand_reward = $this->rand_reward($packet);
         $data = array(
             'open_id' => $this->input->post('open_id'),
             'packet_id' => $this->input->post('packet_id'),
             'reward' => $rand_reward,
-            'voice' => $this->input->post('voice'),
+            'voice' => $voice,
             'user_info'=>$user['user_info'],
             'sender_info'=>$packet['user_info'],
         );
@@ -118,6 +190,7 @@ class Packet_model extends CI_Model {
 
         if($result){
             $data['user_info'] = json_decode($user['user_info'],true);
+            $data['sender_info'] = json_decode($packet['user_info'],true);
             $data['receive_id'] = $this->db->insert_id();
             $packet = $this->db->update('packet',$packet_data,array('packet_id'=>$packet['packet_id']));
             return array(
@@ -133,6 +206,9 @@ class Packet_model extends CI_Model {
             );
         }
     }
+    /**
+     * 我的记录
+     */
     public function packet_record()
     {
         $open_id = $this->input->post('open_id');
@@ -147,7 +223,7 @@ class Packet_model extends CI_Model {
         }
         $send_reward = $this->count_reward($open_id);
         $this->load->model('receive_model');
-        $receives = $this->receive_model->get_receive($condition);
+        $receives = $this->receive_model->get_receive($condition,'result');
         $receive_reward = $this->receive_model->count_reward($open_id);
         if(!$receives){
             $receives = array();

@@ -54,10 +54,19 @@ class Packet extends CI_Controller {
     {
         $packet_id = isset($_REQUEST['packet_id']) ? (int)$_REQUEST['packet_id'] : '';
         if($packet_id){
-            $packet = $this->packet_model->get_packet($packet_id);
+            $condition = array('packet_id'=>$packet_id);
+
+            $packet = $this->packet_model->get_packet($condition);
+
             if($packet){
-                $condition = array('packet_id'=>$packet_id);
-                $receives = $this->receive_model->get_receive($condition);
+                $packet['user_info'] = json_decode($packet['user_info'],true);
+                $receives = $this->receive_model->get_receive($condition,'result');
+                if($receives && count($receives)){
+                    foreach ($receives as &$receive){
+                        $receive['user_info'] = json_decode($receive['user_info'],true);
+                        $receive['sender_info'] = json_decode($receive['sender_info'],true);
+                    }
+                }
                 $this->json([
                     'code' => 0,
                     'data' =>array(
