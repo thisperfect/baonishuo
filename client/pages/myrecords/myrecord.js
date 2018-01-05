@@ -1,7 +1,11 @@
+var config = require('../../config');
+var util = require('../../utils/util.js');
 Page({
   data:{
     currentTab:0,
     userIcon:'',
+    myRecData:{},
+    userInfo:{},
   },
   onLoad: function (options) {
     console.log("Windowheight:=" + wx.getSystemInfoSync().windowHeight);
@@ -16,10 +20,48 @@ Page({
      */
     console.log("icon =" + wx.getStorageSync("userinfo").avatarUrl);
     this.setData({
-      userIcon: wx.getStorageSync("userinfo").avatarUrl
-    })
+      userInfo: wx.getStorageSync("userinfo")
+    });
+    console.log("userinfo ：");
+    console.log(this.data.userInfo);
+
+    /**
+     * 调用接口获取数据
+     */
+    this.getData();
+
 
   },
+
+  getData:function(){
+    var that = this;
+    var data = {};
+    data.open_id = this.data.userInfo.openId;
+    console.log(data);
+    wx.request({
+      url: config.service.getMyRecord,
+      data:data,
+      method:'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success:function(res){
+        console.log("获取我的记录数据成功");
+        console.log(res.data.data);
+        that.setData({
+          myRecData:res.data.data
+        })
+      },
+      fail:function(){
+        console.log("获取我的记录数据失败");
+
+      }
+    })
+  },
+
+
+
+
   bindChange:function(event){
     console.log("currentTAB =" + event.detail.current);
     this.setData({

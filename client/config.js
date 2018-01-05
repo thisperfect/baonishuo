@@ -28,6 +28,9 @@ var config = {
 
         //获取语音口令详情
         getVoiceDetail: `${host}/packet/view`,
+
+        //获取我的记录
+        getMyRecord: `${host}/packet/record`,
     }
 };
 

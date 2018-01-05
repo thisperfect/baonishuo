@@ -4,31 +4,36 @@
   <scroll-view scroll-y style='height:{{scrollH}}px'>
     <view class='send-container'>
       <view>
-        <image class='user-icon' src="{{userIcon}}"></image>
+        <image class='user-icon' src="{{avatarUrl}}"></image>
         <view class='user-info'>
-          <text class='user-name'>罗少东</text>
+          <text class='user-name'>{{ nickName }}</text>
           <text>共发出</text>
         </view>
         <view class='info'>
           <view class='info-money'>
             <text class='info-money-title'>金额(元)</text>
-            <text class='info-money-num'>27</text>
+            <text class='info-money-num'>{{ send_reward.send_reward }}</text>
           </view>
           <view class='info-num'>
             <text class='info-num-title'>数量(个)</text>
-            <text class='info-num-num'>2</text>
+            <text class='info-num-num'>{{ send_number }}</text>
           </view>
         </view>
       </view>
       <view class='send-list'>
-        <template is="message" />
+      <block wx:for="{{TypeList}}" wx:for-item="item" wx:for-index="idx">
+          <view>
+            <template is="message" data="{{...item}}"/>
+          </view>
+      </block>
+        <!-- <template is="message" />
         <template is="message" />
         <template is="message" />
          <template is="message" />
         <template is="message" />
         <template is="message" />
         <template is="message" />
-        <template is="message" />
+        <template is="message" /> -->
        
       </view>
       <text class='almost-question'>常见问题</text>
