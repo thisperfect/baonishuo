@@ -26,6 +26,7 @@ $config = [
         'user' => 'root',
         'db'   => 'cAuth',
         'pass' => 'wx1e236e8724058d61',
+        // 'pass' => 'KChygS7t',//production
         'char' => 'utf8mb4'
     ],
 

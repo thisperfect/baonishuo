@@ -25,6 +25,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'https://t9jhvvuo.qcloud.la/';
 
+//production
+// $config['base_url'] = 'https://441649268.rundong.xyz/';
+
+
 /*
 |--------------------------------------------------------------------------
 | Index File
