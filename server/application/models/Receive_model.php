@@ -7,7 +7,7 @@ class Receive_model extends CI_Model {
 
         $this->load->database();
     }
-    public function get_receive($condition=array())
+    public function get_receive($condition=array(),$type='row')
     {
         if (empty($condition))
         {
@@ -17,7 +17,11 @@ class Receive_model extends CI_Model {
         }
 
         $query = $this->db->get_where('receive', $condition);
-        return $query->result_array();
+        if($type=='row'){
+            return $query->row_array();
+        }elseif($type='result'){
+            return $query->result_array();
+        }
     }
     public function set_receive($userinfo ='')
     {

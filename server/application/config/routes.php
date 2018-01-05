@@ -56,3 +56,4 @@ $route['weapp'] = '/';
 $route['weapp/(.+)'] = '$1';
 
 $route['packet/(.+)'] = 'packet/$1';
+$route['payment/(.+)'] = 'payment/$1';
