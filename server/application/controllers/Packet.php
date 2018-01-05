@@ -95,7 +95,7 @@ class Packet extends CI_Controller {
      */
     public function receive()
     {
-        $fields = array('packet_id','open_id','voice');
+        $fields = array('packet_id','open_id');
         $result = $this->validate($fields);
         if(!$result){
             $this->json([
